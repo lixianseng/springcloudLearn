@@ -9,7 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-provider-payment8001</artifactId>
+    <artifactId>cloud-provider-payment8002</artifactId>
+
 
     <dependencies>
         <!--注册进EurekaServer成为服务提供者-->
@@ -82,5 +83,4 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
-
 </project>
