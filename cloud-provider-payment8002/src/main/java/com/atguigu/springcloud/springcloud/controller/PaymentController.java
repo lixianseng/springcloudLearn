@@ -1,13 +1,14 @@
-package com.atguigu.springcloud.controller;
+package com.atguigu.springcloud.springcloud.controller;
 
 import com.aiguigu.springcloud.entity.CommonResult;
 import com.aiguigu.springcloud.entity.Payment;
-import com.atguigu.springcloud.service.PaymentService;
+import com.atguigu.springcloud.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 //import com.aiguigu.springcloud.service.PaymentService;
 
@@ -55,5 +56,17 @@ public class PaymentController {
     @GetMapping(value = "/payment/lb")
     public String getPaymentLB() {
         return serverPort;//返回服务接口
+    }
+
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTimeout()
+    {
+        // 业务逻辑处理正确，但是需要耗费3秒钟
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
     }
 }
