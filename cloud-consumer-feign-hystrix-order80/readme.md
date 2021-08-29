@@ -20,4 +20,8 @@
        public String paymentTimeOutFallbackMethod(@PathVariable("id") Integer id){
            return "我是消费者80,对方支付系统繁忙请10秒钟后再试或者自己运行出错请检查自己,o(╥﹏╥)o";
        }
-       
+
+全局兜底方法处理：
+1.控制器上加上@DefaultProperties(defaultFallback = "payment_Global_FallbackMethod")
+2.需要兜底的方法上加上@HystrixCommand
+3.写一个全局的fallback方法。
