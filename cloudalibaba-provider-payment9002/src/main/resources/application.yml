@@ -1,0 +1,16 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: nacos-payment-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #配置Nacos地址,将9002这个服务配置到nacos上去，到时候在nacos上可以看到这个服务
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
