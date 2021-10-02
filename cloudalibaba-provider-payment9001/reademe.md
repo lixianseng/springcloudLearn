@@ -51,4 +51,10 @@ nacos控制台登陆"
 localhost:8848/nacos
 在服务列表上就可以看到注册上去的9001，9002
 
+Nacos支持AP和CP模式的切换
+
+切换命令：
+
+curl -X PUT '$NACOS_SERVER:8848/nacos/v1/ns/operator/switches?entry=serverMode&value=CP
+
 
